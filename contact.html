@@ -4,36 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Cesar & Associates Health Plan Advisors</title>
-  <meta name="description" content="Contact Cesar & Associates in Indio, CA. Free consultations. Call (442) 324-6249 or visit us at 81953 Highway 111, Suite 4.">
+  <meta name="description" content="Contact Cesar & Associates in Indio, CA. Free consultations. Call (442) 324-6249 or visit 81953 Highway 111, Suite 4.">
   <link rel="canonical" href="https://www.candateam.com/contact.html">
-  
-  
-  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="/" class="nav-brand"><img src="assets/logo-mini.png" alt="C&A" class="nav-logo"> Cesar & Associates</a>
+    <a href="/" class="nav-brand">
+      <img src="assets/logo-mini.png" alt="C&A" class="nav-logo">
+      <div><div class="nav-brand-text">Cesar & Associates</div><div class="nav-brand-sub">Health Plan Advisors</div></div>
+    </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="/services.html">Services</a></li>
       <li><a href="/about.html">About</a></li>
       <li><a href="/contact.html" class="active">Contact</a></li>
       <li><a href="/es/">Espanol</a></li>
-      <li><a href="tel:+14423246249" class="nav-cta">Call (442) 324-6249</a></li>
+      <li><a href="tel:+14423246249" class="nav-cta">(442) 324-6249</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <section class="page-hero">
+  <div class="sec-label center" style="color:rgba(255,255,255,0.6);">Contacto</div>
   <h1>Contact Us</h1>
   <p>Schedule your free consultation — no obligation, no pressure</p>
 </section>
 
-<section class="section">
+<section class="section" style="background:var(--color-surface);">
   <div class="container">
+    <!-- Phone accent cards -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:600px;margin:0 auto 40px;">
+      <div class="phone-accent">
+        <div>
+          <div class="pa-lbl">Call Us</div>
+          <a href="tel:+14423246249" class="pa-num" style="color:var(--color-text);">(442) 324-6249</a>
+        </div>
+      </div>
+      <div class="phone-accent navy-border">
+        <div>
+          <div class="pa-lbl">Email</div>
+          <a href="mailto:ElCesar@CandATeam.com" style="font-family:var(--font-heading);font-size:0.95rem;font-weight:700;color:var(--color-text);">ElCesar@CandATeam.com</a>
+        </div>
+      </div>
+    </div>
+
     <div class="contact-grid">
       <div class="contact-info">
         <h3>Visit Our Office</h3>
@@ -42,20 +59,6 @@
           <div>
             <strong>Address</strong>
             <span>81953 Highway 111, Suite 4<br>Indio, CA 92201</span>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">&#x1F4DE;</div>
-          <div>
-            <strong>Phone</strong>
-            <a href="tel:+14423246249">(442) 324-6249</a>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">&#x1F4E7;</div>
-          <div>
-            <strong>Email</strong>
-            <a href="mailto:ElCesar@CandATeam.com">ElCesar@CandATeam.com</a>
           </div>
         </div>
         <div class="contact-item">
@@ -72,19 +75,37 @@
             <span>English & Spanish</span>
           </div>
         </div>
+        <div class="contact-item">
+          <div class="contact-icon">&#x1F4CD;</div>
+          <div>
+            <strong>Areas Served</strong>
+            <span>Indio, Palm Springs, Palm Desert, La Quinta, Cathedral City, Coachella Valley</span>
+          </div>
+        </div>
 
-        <div style="margin-top:28px;">
-          <strong style="font-size:0.85rem;display:block;margin-bottom:10px;">Find Us Online</strong>
-          <div class="footer-social">
-            <a href="https://www.facebook.com/CesarandAssociateshpa/" target="_blank" rel="noopener" aria-label="Facebook" style="background:var(--light);color:var(--blue-deep);">f</a>
-            <a href="https://www.yelp.com/biz/cesar-health-insurance-services-indio" target="_blank" rel="noopener" aria-label="Yelp" style="background:var(--light);color:var(--blue-deep);">Y</a>
+        <div style="margin-top:24px;">
+          <div class="sec-label">Follow Us</div>
+          <div class="footer-social" style="margin-top:8px;">
+            <a href="https://www.facebook.com/CesarandAssociateshpa/" target="_blank" rel="noopener" aria-label="Facebook" style="background:var(--color-surface-alt);color:var(--color-primary);">f</a>
+            <a href="https://www.yelp.com/biz/cesar-health-insurance-services-indio" target="_blank" rel="noopener" aria-label="Yelp" style="background:var(--color-surface-alt);color:var(--color-primary);">Y</a>
+          </div>
+        </div>
+
+        <!-- QR Code -->
+        <div style="margin-top:24px;display:flex;align-items:center;gap:16px;">
+          <div class="qr-box" style="width:100px;height:100px;padding:10px;">
+            <img src="assets/qr.png" alt="Scan for contact info">
+          </div>
+          <div>
+            <div class="sec-label" style="margin-bottom:4px;">Scan for Info</div>
+            <p style="font-size:0.82rem;color:var(--color-text-secondary);margin:0;">Point your phone camera at the QR code for quick access.</p>
           </div>
         </div>
       </div>
 
       <div class="contact-form">
         <h3>Request a Free Consultation</h3>
-        <form id="contactForm" action="https://formspree.io/f/placeholder" method="POST">
+        <form id="contactForm">
           <div class="form-row">
             <div class="form-group">
               <label for="fname">First Name *</label>
@@ -128,11 +149,11 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="message">How can we help?</label>
+            <label for="message">How Can We Help?</label>
             <textarea id="message" name="message" placeholder="Tell us about your situation..."></textarea>
           </div>
           <button type="submit" class="form-submit">Send Request</button>
-          <p style="font-size:0.78rem;color:var(--gray);margin-top:10px;text-align:center;">We'll respond within 1 business day. For urgent matters, please call.</p>
+          <p style="font-size:0.72rem;color:var(--color-text-muted);margin-top:8px;text-align:center;letter-spacing:0.3px;">We respond within 1 business day. For urgent matters, please call.</p>
         </form>
       </div>
     </div>
@@ -140,9 +161,9 @@
     <div class="map-wrapper">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.1!2d-116.2155!3d33.7206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80db0369d0e2a1e7%3A0x6ed5027b682d52a8!2s81953+CA-111+%234%2C+Indio%2C+CA+92201!5e0!3m2!1sen!2sus!4v1"
-        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+        width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        title="Cesar & Associates Office — 81953 Highway 111, Suite 4, Indio, CA">
+        title="Cesar & Associates — 81953 Highway 111, Suite 4, Indio, CA">
       </iframe>
     </div>
   </div>
@@ -151,8 +172,9 @@
 <footer class="footer">
   <div class="footer-inner">
     <div>
-      <div class="footer-brand">C&A <span>Team</span></div>
-      <p>Cesar & Associates Health Plan Advisors. Helping families protect their health and legacy in the Coachella Valley.</p>
+      <div class="footer-brand">Cesar & Associates</div>
+      <p>Health Plan Advisors. Protecting health and legacy in the Coachella Valley.</p>
+      <p style="margin-top:10px;font-size:0.75rem;">81953 Highway 111, Suite 4<br>Indio, CA 92201</p>
     </div>
     <div>
       <ul class="footer-links">
@@ -171,7 +193,7 @@
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">&copy; 2026 Cesar & Associates Health Plan Advisors. All rights reserved.</div>
+  <div class="footer-bottom">&copy; 2026 Cesar & Associates Health Plan Advisors &bull; All Rights Reserved</div>
 </footer>
 
 <script src="nav.js"></script>
@@ -179,18 +201,11 @@
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const btn = this.querySelector('.form-submit');
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-    // TODO: Wire to n8n webhook or Formspree
+    btn.textContent = 'Sending...'; btn.disabled = true;
     setTimeout(() => {
       btn.textContent = 'Sent! We\'ll be in touch soon.';
-      btn.style.background = '#16a34a';
-      this.reset();
-      setTimeout(() => {
-        btn.textContent = 'Send Request';
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 3000);
+      btn.style.background = '#16a34a'; this.reset();
+      setTimeout(() => { btn.textContent = 'Send Request'; btn.style.background = ''; btn.disabled = false; }, 3000);
     }, 800);
   });
 </script>

@@ -3,167 +3,194 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cesar & Associates — Asesores de Planes de Salud</title>
-  <meta name="description" content="Cesar & Associates — Asesores de seguros de salud, Medicare, seguros de vida, fideicomisos y planificacion patrimonial en Indio, Valle de Coachella. Servicio bilingue. Consulta gratuita.">
+  <title>Cesar & Associates — Asesores de Planes de Salud | Indio, CA</title>
+  <meta name="description" content="Cesar & Associates — Medicare, seguros de salud, seguros de vida, fideicomisos y planificacion patrimonial en Indio, Valle de Coachella. Servicio bilingue. Consulta gratuita.">
   <link rel="canonical" href="https://www.candateam.com/es/">
   <link rel="alternate" hreflang="en" href="https://www.candateam.com/">
   <link rel="alternate" hreflang="es" href="https://www.candateam.com/es/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Marmelad&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="/es/" class="nav-brand"><img src="../assets/logo-mini.png" alt="C&A" class="nav-logo"> Cesar & Associates</a>
+    <a href="/es/" class="nav-brand">
+      <img src="../assets/logo-mini.png" alt="C&A" class="nav-logo">
+      <div><div class="nav-brand-text">Cesar & Associates</div><div class="nav-brand-sub">Asesores de Salud</div></div>
+    </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#equipo">Equipo</a></li>
       <li><a href="#contacto">Contacto</a></li>
       <li><a href="/">English</a></li>
-      <li><a href="tel:+14423246249" class="nav-cta">Llamar (442) 324-6249</a></li>
+      <li><a href="tel:+14423246249" class="nav-cta">(442) 324-6249</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <!-- HERO -->
-<section style="padding:160px 24px 100px;background:linear-gradient(135deg,var(--blue-deep) 0%,#1e4a8a 50%,var(--blue) 100%);color:var(--white);text-align:center;">
-  <div style="display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);padding:6px 16px;border-radius:20px;font-size:0.8rem;font-weight:600;margin-bottom:24px;letter-spacing:0.5px;">Sirviendo al Valle de Coachella Desde 2010</div>
-  <h1 style="font-family:'Marmelad',sans-serif;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.15;margin-bottom:20px;">Su Salud y Su Legado,<br>Protegidos</h1>
-  <p style="font-size:clamp(1rem,2vw,1.2rem);max-width:640px;margin:0 auto 36px;opacity:0.9;line-height:1.7;">Cesar & Associates ayuda a las familias a navegar Medicare, seguros de salud y planificacion patrimonial — en espanol. Consulta gratuita, sin compromiso.</p>
-  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-    <a href="tel:+14423246249" class="btn btn-primary">Llamar — (442) 324-6249</a>
-    <a href="#contacto" class="btn btn-outline">Solicitar Consulta</a>
+<section class="hero">
+  <div class="hero-tagline">Medicare &bull; Seguros &bull; Living Trust &bull; Planificacion Patrimonial</div>
+  <h1>Tu Futuro.<br>Nuestra Promesa.</h1>
+  <div class="hero-script">Tu Camino, Nuestra Guia</div>
+  <p>Cesar & Associates ayuda a las familias a navegar Medicare, seguros de salud y planificacion patrimonial — en espanol. Consulta gratuita, sin compromiso.</p>
+  <div class="pill-row">
+    <span class="pill">Equipo Bilingue</span>
+    <span class="pill">Expertos Locales</span>
+    <span class="pill">Desde 2010</span>
+  </div>
+  <div class="hero-buttons">
+    <a href="tel:+14423246249" class="btn btn-white">Llamar — (442) 324-6249</a>
+    <a href="#contacto" class="btn btn-outline-white">Consulta Gratuita</a>
   </div>
 </section>
 
+<!-- Hero photo -->
+<div style="max-width:1080px;margin:-32px auto 0;padding:0 24px;position:relative;z-index:1;">
+  <div class="photo-masked" style="height:380px;border-radius:var(--radius-card);box-shadow:var(--shadow-photo);">
+    <img src="../assets/family.jpg" alt="Familia protegida por Cesar & Associates" style="height:380px;">
+  </div>
+</div>
+
 <!-- SERVICIOS -->
-<section class="section section-alt" id="servicios">
+<section class="section" id="servicios">
   <div class="container">
     <div class="section-header">
+      <div class="sec-label center">Especialidades</div>
       <h2>Nuestros Servicios</h2>
       <p>Servicios completos de seguros y planificacion patrimonial</p>
     </div>
-    <div class="card-grid">
-      <div class="card">
-        <div class="card-icon">&#x1F3E5;</div>
-        <h3>Medicare Advantage</h3>
-        <p>Encuentre el plan Medicare Advantage correcto con cobertura de medicamentos, dental, vision y mas — a menudo sin costo adicional.</p>
+
+    <div class="svc-list" style="max-width:700px;margin:0 auto 40px;">
+      <div class="svc-item">
+        <div class="svc-lbl red">Medicare</div>
+        <div class="svc-body">Medicare Advantage, Suplemento (Medigap) y planes de medicamentos Parte D. Comparamos aseguradoras para encontrar su mejor opcion.</div>
       </div>
-      <div class="card">
-        <div class="card-icon">&#x1F6E1;</div>
-        <h3>Suplemento de Medicare</h3>
-        <p>Planes Medigap que cubren lo que Medicare Original no cubre — copagos, coseguros y deducibles.</p>
+      <div class="svc-item">
+        <div class="svc-lbl navy">Seguro de Salud</div>
+        <div class="svc-body">Planes individuales y familiares a traves de Covered California y aseguradoras privadas. Subsidios ACA, guia de inscripcion abierta.</div>
       </div>
-      <div class="card">
-        <div class="card-icon">&#x2764;</div>
-        <h3>Seguro de Salud</h3>
-        <p>Planes individuales y familiares a traves de Covered California y aseguradoras privadas.</p>
+      <div class="svc-item">
+        <div class="svc-lbl red">Seguro de Vida y Gastos Finales</div>
+        <div class="svc-body">Seguro de vida a termino y permanente. Cobertura de gastos finales. Opciones sin examen medico. Proteja el futuro de su familia.</div>
       </div>
-      <div class="card">
-        <div class="card-icon">&#x1F331;</div>
-        <h3>Seguro de Vida y Gastos Finales</h3>
-        <p>Seguros de vida y cobertura de gastos finales accesibles para proteger a su familia.</p>
+      <div class="svc-item">
+        <div class="svc-lbl navy">Fideicomiso y Planificacion Patrimonial</div>
+        <div class="svc-body">Evite sucesion testamentaria, proteja sus bienes y asegure que se cumplan sus deseos. Testamentos, poder notarial, directivas de salud.</div>
       </div>
-      <div class="card">
-        <div class="card-icon">&#x1F3E0;</div>
-        <h3>Fideicomiso en Vida</h3>
-        <p>Evite la sucesion testamentaria y proteja sus bienes con un fideicomiso en vida.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">&#x1F4CB;</div>
-        <h3>Planificacion Patrimonial</h3>
-        <p>Testamentos, poder notarial y directivas de atencion medica para proteger a su familia.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">&#x1F9B7;</div>
-        <h3>Dental y Vision</h3>
-        <p>Planes independientes de dental y vision para mantener su sonrisa y su vista.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">&#x1F4B0;</div>
-        <h3>Planificacion de Jubilacion</h3>
-        <p>Anualidades, transferencias de IRA y estrategias de ingresos para su jubilacion.</p>
+      <div class="svc-item">
+        <div class="svc-lbl red">Dental, Vision y Jubilacion</div>
+        <div class="svc-body">Planes independientes de dental y vision. Anualidades, transferencias de IRA y estrategias de ingresos para jubilacion.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- POR QUE NOSOTROS -->
-<section class="section" id="equipo">
+<!-- CESAR -->
+<section class="section" style="background:var(--color-surface);" id="equipo">
+  <div class="container" style="display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:start;">
+    <div>
+      <div class="photo-masked" style="height:360px;border-radius:var(--radius-card);box-shadow:var(--shadow-photo);">
+        <img src="../assets/cesar.jpg" alt="Cesar — Fundador" style="height:360px;">
+      </div>
+    </div>
+    <div>
+      <div class="sec-header-card" style="margin-bottom:20px;">
+        <div>
+          <div class="htitle">Quien es Cesar?</div>
+          <div class="hsub">Construido Desde Cero para Servir a Nuestra Comunidad.</div>
+        </div>
+        <img class="logo-badge" src="../assets/logo-mini.png" alt="C&A">
+      </div>
+
+      <p style="font-size:0.9rem;line-height:1.65;color:var(--color-text-secondary);margin-bottom:12px;">
+        Comence trabajando en los campos locales del Valle de Coachella y creci en una comunidad rural donde el trabajo duro era una forma de vida. Ahi entendi que muchas familias se esfuerzan al maximo, pero no siempre reciben orientacion financiera y de salud clara y confiable.
+      </p>
+      <p style="font-size:0.9rem;line-height:1.65;color:var(--color-text-secondary);margin-bottom:16px;">
+        Cesar & Associates nacio para servir a esas mismas familias: con claridad, cercania y compromiso real.
+      </p>
+
+      <ul class="blist">
+        <li><strong>Simplificamos el acceso al cuidado de salud en cada etapa.</strong></li>
+        <li><strong>Le ayudamos a crecer y proteger su dinero con estrategia.</strong></li>
+        <li><strong>Disenamos proteccion patrimonial para su familia y legado.</strong></li>
+        <li><strong>Atencion bilingue, sin presion y con seguimiento anual.</strong></li>
+      </ul>
+
+      <div class="info-card" style="margin-top:20px;">
+        <div class="ic-label">Especialidades</div>
+        <div class="ic-title">Medicare, Vida, Retiro y Patrimonio</div>
+        <div class="ic-body">Planes Medicare Advantage y Suplementario, Parte D, seguro individual/familiar, anualidades fijas e indexadas, seguro de vida y planificacion patrimonial.</div>
+        <div class="ic-cta">Una poliza, una persona y una comunidad a la vez.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section">
   <div class="container">
     <div class="section-header">
+      <div class="sec-label center">En Numeros</div>
       <h2>Por Que Confiar en Nosotros</h2>
-      <p>No somos un centro de llamadas. Somos sus vecinos en el Valle de Coachella.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;">
-      <div style="text-align:center;padding:20px;">
-        <div style="font-family:'Marmelad',sans-serif;font-size:2.8rem;color:var(--blue);font-weight:700;line-height:1;margin-bottom:8px;">15+</div>
-        <h3 style="font-size:1rem;margin-bottom:6px;">Anos de Experiencia</h3>
-        <p style="font-size:0.85rem;color:var(--gray);">Sirviendo al Valle de Coachella desde 2010</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-bubble">15</div>
+        <h3>Anos de Experiencia</h3>
+        <p>Sirviendo al Valle de Coachella desde 2010</p>
       </div>
-      <div style="text-align:center;padding:20px;">
-        <div style="font-family:'Marmelad',sans-serif;font-size:2.8rem;color:var(--blue);font-weight:700;line-height:1;margin-bottom:8px;">100%</div>
-        <h3 style="font-size:1rem;margin-bottom:6px;">Bilingue</h3>
-        <p style="font-size:0.85rem;color:var(--gray);">Servicio completo en espanol e ingles</p>
+      <div class="stat">
+        <div class="stat-bubble">2</div>
+        <h3>Idiomas</h3>
+        <p>Servicio completo en espanol e ingles</p>
       </div>
-      <div style="text-align:center;padding:20px;">
-        <div style="font-family:'Marmelad',sans-serif;font-size:2.8rem;color:var(--blue);font-weight:700;line-height:1;margin-bottom:8px;">$0</div>
-        <h3 style="font-size:1rem;margin-bottom:6px;">Costo de Consulta</h3>
-        <p style="font-size:0.85rem;color:var(--gray);">Consultas gratuitas y sin compromiso</p>
+      <div class="stat">
+        <div class="stat-bubble">$0</div>
+        <h3>Costo de Consulta</h3>
+        <p>Consultas gratuitas y sin compromiso</p>
       </div>
-      <div style="text-align:center;padding:20px;">
-        <div style="font-family:'Marmelad',sans-serif;font-size:2.8rem;color:var(--blue);font-weight:700;line-height:1;margin-bottom:8px;">9</div>
-        <h3 style="font-size:1rem;margin-bottom:6px;">Lineas de Servicio</h3>
-        <p style="font-size:0.85rem;color:var(--gray);">De Medicare a planificacion patrimonial — un equipo lo maneja todo</p>
+      <div class="stat">
+        <div class="stat-bubble">9</div>
+        <h3>Lineas de Servicio</h3>
+        <p>De Medicare a planificacion patrimonial</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CONTACTO -->
-<section class="section section-alt" id="contacto">
+<section class="section" style="background:var(--color-surface);" id="contacto">
   <div class="container">
     <div class="section-header">
+      <div class="sec-label center">Contacto</div>
       <h2>Contactenos</h2>
       <p>Programe su consulta gratuita hoy</p>
     </div>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <h3>Visite Nuestra Oficina</h3>
-        <div class="contact-item">
-          <div class="contact-icon">&#x1F4CD;</div>
-          <div>
-            <strong>Direccion</strong>
-            <span>81953 Highway 111, Suite 4<br>Indio, CA 92201</span>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">&#x1F4DE;</div>
-          <div>
-            <strong>Telefono</strong>
-            <a href="tel:+14423246249">(442) 324-6249</a>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">&#x1F4E7;</div>
-          <div>
-            <strong>Correo</strong>
-            <a href="mailto:ElCesar@CandATeam.com">ElCesar@CandATeam.com</a>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">&#x1F552;</div>
-          <div>
-            <strong>Horario</strong>
-            <span>Lunes — Viernes<br>9:00 AM — 5:00 PM</span>
-          </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:500px;margin:0 auto 32px;">
+      <div class="phone-accent">
+        <div>
+          <div class="pa-lbl">Telefono</div>
+          <a href="tel:+14423246249" class="pa-num" style="color:var(--color-text);">(442) 324-6249</a>
         </div>
       </div>
+      <div class="phone-accent navy-border">
+        <div>
+          <div class="pa-lbl">Correo</div>
+          <a href="mailto:ElCesar@CandATeam.com" style="font-size:0.88rem;font-weight:700;color:var(--color-text);">ElCesar@CandATeam.com</a>
+        </div>
+      </div>
+    </div>
 
+    <div class="address-bar" style="max-width:500px;margin:0 auto 32px;">
+      <div class="addr-label">Oficina</div>
+      <div class="addr-text">81953 Highway 111, Suite 4 — Indio, CA 92201</div>
+      <div style="font-size:0.78rem;color:var(--color-text-muted);margin-top:4px;">Lunes — Viernes, 9:00 AM — 5:00 PM</div>
+    </div>
+
+    <div style="max-width:500px;margin:0 auto;">
       <div class="contact-form">
         <h3>Solicite una Consulta Gratuita</h3>
         <form id="contactForm">
@@ -183,14 +210,14 @@
               <input type="tel" id="phone" name="phone" required>
             </div>
             <div class="form-group">
-              <label for="email">Correo Electronico</label>
+              <label for="email">Correo</label>
               <input type="email" id="email" name="email">
             </div>
           </div>
           <div class="form-group">
             <label for="service">Servicio de Interes</label>
             <select id="service" name="service">
-              <option value="">Seleccione un servicio...</option>
+              <option value="">Seleccione...</option>
               <option value="medicare-advantage">Medicare Advantage</option>
               <option value="medicare-supplement">Suplemento de Medicare</option>
               <option value="health-insurance">Seguro de Salud</option>
@@ -203,7 +230,7 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="message">Como podemos ayudarle?</label>
+            <label for="message">Como Podemos Ayudarle?</label>
             <textarea id="message" name="message" placeholder="Cuentenos su situacion..."></textarea>
           </div>
           <button type="submit" class="form-submit">Enviar Solicitud</button>
@@ -213,11 +240,20 @@
   </div>
 </section>
 
+<!-- CTA -->
+<section class="cta-banner">
+  <span class="script">Tu Camino, Nuestra Guia</span>
+  <h2>Listos Para Ayudarle</h2>
+  <p>No importa su situacion — Medicare, seguros, fideicomiso o jubilacion. Estamos aqui para usted.</p>
+  <a href="tel:+14423246249" class="btn btn-white">Llamar Ahora — (442) 324-6249</a>
+</section>
+
 <footer class="footer">
   <div class="footer-inner">
     <div>
-      <div class="footer-brand">C&A <span>Team</span></div>
-      <p>Cesar & Associates — Asesores de Planes de Salud. Protegiendo la salud y el legado de las familias del Valle de Coachella.</p>
+      <div class="footer-brand">Cesar & Associates</div>
+      <p>Asesores de Planes de Salud. Protegiendo la salud y el legado de las familias del Valle de Coachella.</p>
+      <p style="margin-top:10px;font-size:0.75rem;">81953 Highway 111, Suite 4<br>Indio, CA 92201</p>
     </div>
     <div>
       <ul class="footer-links">
@@ -235,7 +271,7 @@
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">&copy; 2026 Cesar & Associates Health Plan Advisors. Todos los derechos reservados.</div>
+  <div class="footer-bottom">&copy; 2026 Cesar & Associates Health Plan Advisors &bull; Todos los Derechos Reservados</div>
 </footer>
 
 <script src="../nav.js"></script>
@@ -243,12 +279,10 @@
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const btn = this.querySelector('.form-submit');
-    btn.textContent = 'Enviando...';
-    btn.disabled = true;
+    btn.textContent = 'Enviando...'; btn.disabled = true;
     setTimeout(() => {
       btn.textContent = 'Enviado! Le llamaremos pronto.';
-      btn.style.background = '#16a34a';
-      this.reset();
+      btn.style.background = '#16a34a'; this.reset();
       setTimeout(() => { btn.textContent = 'Enviar Solicitud'; btn.style.background = ''; btn.disabled = false; }, 3000);
     }, 800);
   });
