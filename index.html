@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cesar & Associates — Health Plan Advisors</title>
+  <title>Cesar & Associates — Health Plan Advisors | Indio, CA</title>
   <meta name="description" content="Cesar & Associates Health Plan Advisors — Medicare, Health Insurance, Estate Planning & Living Trust services in Indio, Coachella Valley. Bilingual English/Spanish. Free consultation.">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="Cesar & Associates — Health Plan Advisors">
   <meta property="og:description" content="Medicare, Health Insurance, Estate Planning & Living Trust in Indio, CA. Bilingual EN/ES. Free consultation.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.candateam.com">
+  <meta property="og:image" content="https://www.candateam.com/assets/hero.jpg">
   <link rel="canonical" href="https://www.candateam.com">
   <script type="application/ld+json">
   {
@@ -21,7 +22,7 @@
     "telephone": "+1-442-324-6249",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "81955 State Hwy 111, Suite 214",
+      "streetAddress": "81953 Highway 111, Suite 4",
       "addressLocality": "Indio",
       "addressRegion": "CA",
       "postalCode": "92201",
@@ -41,9 +42,6 @@
     ]
   }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Marmelad&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -51,13 +49,16 @@
 <!-- NAV -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="/" class="nav-brand">C&A <span>Team</span></a>
+    <a href="/" class="nav-brand">
+      <img src="assets/logo-mini.png" alt="C&A" class="nav-logo">
+      Cesar & Associates
+    </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="/services.html">Services</a></li>
       <li><a href="/about.html">About</a></li>
       <li><a href="/contact.html">Contact</a></li>
       <li><a href="/es/">Espanol</a></li>
-      <li><a href="tel:+14423246249" class="nav-cta">Call (442) 324-6249</a></li>
+      <li><a href="tel:+14423246249" class="nav-cta">(442) 324-6249</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -66,20 +67,30 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero" style="padding:160px 24px 100px;background:linear-gradient(135deg,var(--blue-deep) 0%,#1e4a8a 50%,var(--blue) 100%);color:var(--white);text-align:center;">
-  <div style="display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);padding:6px 16px;border-radius:20px;font-size:0.8rem;font-weight:600;margin-bottom:24px;letter-spacing:0.5px;">Serving the Coachella Valley Since 2010</div>
-  <h1 style="font-family:'Marmelad',sans-serif;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.15;margin-bottom:20px;">Your Health & Legacy,<br>Protected</h1>
-  <p style="font-size:clamp(1rem,2vw,1.2rem);max-width:640px;margin:0 auto 36px;opacity:0.9;line-height:1.7;">Cesar & Associates helps families navigate Medicare, health insurance, and estate planning — in English and Spanish. Free consultation, no obligation.</p>
-  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+<section class="hero">
+  <div class="hero-badge">Serving the Coachella Valley Since 2010</div>
+  <h1>YOUR HEALTH & LEGACY,<br>PROTECTED</h1>
+  <p>Cesar & Associates helps families navigate Medicare, health insurance, and estate planning — in English and Spanish. Free consultation, no obligation.</p>
+  <div class="hero-buttons">
     <a href="tel:+14423246249" class="btn btn-primary">Call Now — (442) 324-6249</a>
     <a href="/contact.html" class="btn btn-outline">Request a Consultation</a>
   </div>
 </section>
 
+<!-- HERO IMAGE -->
+<section class="section-white" style="padding:0;">
+  <div class="container" style="padding:0 24px;transform:translateY(-40px);">
+    <div class="photo-card" style="max-height:400px;overflow:hidden;">
+      <img src="assets/family.jpg" alt="Family planning their future with Cesar & Associates" style="width:100%;object-fit:cover;height:400px;">
+    </div>
+  </div>
+</section>
+
 <!-- SERVICES PREVIEW -->
-<section class="section section-alt">
+<section class="section section-cream">
   <div class="container">
     <div class="section-header">
+      <span class="section-label">Especialidades</span>
       <h2>What We Do</h2>
       <p>Comprehensive insurance and estate planning services tailored to your needs</p>
     </div>
@@ -87,15 +98,15 @@
       <div class="card">
         <div class="card-icon">&#x1F3E5;</div>
         <h3>Medicare Advantage</h3>
-        <p>Find the right Medicare Advantage plan with prescription drug coverage, dental, vision, and more — at no extra premium.</p>
+        <p>Find the right Medicare Advantage plan with prescription drug coverage, dental, vision, and more — often at $0 premium.</p>
       </div>
       <div class="card">
-        <div class="card-icon">&#x1F6E1;</div>
+        <div class="card-icon navy">&#x1F6E1;</div>
         <h3>Medicare Supplement</h3>
         <p>Medigap plans that cover what Original Medicare doesn't — copays, coinsurance, and deductibles.</p>
       </div>
       <div class="card">
-        <div class="card-icon">&#x2764;</div>
+        <div class="card-icon blue">&#x2764;</div>
         <h3>Health Insurance</h3>
         <p>Individual and family health plans through Covered California and private carriers.</p>
       </div>
@@ -105,69 +116,88 @@
         <p>Affordable life insurance and final expense coverage to protect your family.</p>
       </div>
       <div class="card">
-        <div class="card-icon">&#x1F3E0;</div>
+        <div class="card-icon navy">&#x1F3E0;</div>
         <h3>Living Trust</h3>
         <p>Avoid probate and protect your assets with a living trust.</p>
       </div>
       <div class="card">
-        <div class="card-icon">&#x1F4CB;</div>
+        <div class="card-icon blue">&#x1F4CB;</div>
         <h3>Estate Planning</h3>
         <p>Wills, power of attorney, and healthcare directives.</p>
       </div>
     </div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="/services.html" class="btn btn-blue">View All Services</a>
+      <a href="/services.html" class="btn btn-accent">View All Services</a>
     </div>
   </div>
 </section>
 
 <!-- WHY US -->
-<section class="section">
+<section class="section section-white">
   <div class="container">
     <div class="section-header">
+      <span class="section-label">Why C&A</span>
       <h2>Why Families Trust Us</h2>
       <p>We're not a call center. We're your neighbors in the Coachella Valley.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;">
-      <div style="text-align:center;padding:20px;">
-        <div style="font-family:'Marmelad',sans-serif;font-size:2.8rem;color:var(--blue);font-weight:700;line-height:1;margin-bottom:8px;">15+</div>
-        <h3 style="font-size:1rem;margin-bottom:6px;">Years of Experience</h3>
-        <p style="font-size:0.85rem;color:var(--gray);">Serving the Inland Empire and Coachella Valley since 2010</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">15+</div>
+        <h3>Years of Experience</h3>
+        <p>Serving the Inland Empire and Coachella Valley since 2010</p>
       </div>
-      <div style="text-align:center;padding:20px;">
-        <div style="font-family:'Marmelad',sans-serif;font-size:2.8rem;color:var(--blue);font-weight:700;line-height:1;margin-bottom:8px;">2</div>
-        <h3 style="font-size:1rem;margin-bottom:6px;">Languages</h3>
-        <p style="font-size:0.85rem;color:var(--gray);">Full service in English and Spanish — no translators needed</p>
+      <div class="stat">
+        <div class="stat-num">2</div>
+        <h3>Languages</h3>
+        <p>Full service in English and Spanish — no translators needed</p>
       </div>
-      <div style="text-align:center;padding:20px;">
-        <div style="font-family:'Marmelad',sans-serif;font-size:2.8rem;color:var(--blue);font-weight:700;line-height:1;margin-bottom:8px;">$0</div>
-        <h3 style="font-size:1rem;margin-bottom:6px;">Consultation Fee</h3>
-        <p style="font-size:0.85rem;color:var(--gray);">Free, no-obligation consultations for all services</p>
+      <div class="stat">
+        <div class="stat-num">$0</div>
+        <h3>Consultation Fee</h3>
+        <p>Free, no-obligation consultations for all services</p>
       </div>
-      <div style="text-align:center;padding:20px;">
-        <div style="font-family:'Marmelad',sans-serif;font-size:2.8rem;color:var(--blue);font-weight:700;line-height:1;margin-bottom:8px;">9</div>
-        <h3 style="font-size:1rem;margin-bottom:6px;">Service Lines</h3>
-        <p style="font-size:0.85rem;color:var(--gray);">From Medicare to estate planning — one team handles it all</p>
+      <div class="stat">
+        <div class="stat-num">9</div>
+        <h3>Service Lines</h3>
+        <p>From Medicare to estate planning — one team handles it all</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BILINGUAL BANNER -->
-<section style="background:linear-gradient(135deg,var(--blue-deep),var(--blue));color:var(--white);padding:64px 24px;text-align:center;">
-  <h2 style="font-family:'Marmelad',sans-serif;font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:12px;">Hablamos Espanol</h2>
-  <p style="opacity:0.9;font-size:1.05rem;max-width:600px;margin:0 auto 28px;">Ofrecemos todos nuestros servicios en espanol. Llame hoy para una consulta gratuita con un asesor bilingue.</p>
+<!-- CESAR INTRO -->
+<section class="section section-cream">
+  <div class="container" style="display:grid;grid-template-columns:280px 1fr;gap:40px;align-items:center;">
+    <div class="photo-card">
+      <img src="assets/cesar.jpg" alt="Cesar — Founder" style="width:100%;aspect-ratio:3/4;object-fit:cover;">
+    </div>
+    <div>
+      <span class="section-label" style="text-align:left;">Perfil</span>
+      <h2 style="font-family:var(--font-heading);font-size:1.6rem;color:var(--color-primary);margin-bottom:14px;font-weight:800;">Meet Cesar</h2>
+      <p style="color:var(--color-text-secondary);line-height:1.7;margin-bottom:14px;">With over 15 years of experience in insurance and financial planning, Cesar founded C&A to give Coachella Valley families the guidance they deserve — in a language they understand.</p>
+      <p style="color:var(--color-text-secondary);line-height:1.7;margin-bottom:20px;">As an independent agent, Cesar works with multiple carriers to find the best fit for each client — not just push one company's product. That independence means honest, unbiased advice every time.</p>
+      <a href="/about.html" class="btn btn-accent">Meet the Full Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- BILINGUAL CTA -->
+<section class="cta-banner">
+  <span class="script">Tu Camino, Nuestra Guia</span>
+  <h2>HABLAMOS ESPANOL</h2>
+  <p>Ofrecemos todos nuestros servicios en espanol. Llame hoy para una consulta gratuita con un asesor bilingue.</p>
   <a href="tel:+14423246249" class="btn btn-primary">Llamar Ahora — (442) 324-6249</a>
 </section>
 
 <!-- CTA -->
-<section class="section">
+<section class="section section-cream">
   <div class="container" style="text-align:center;">
-    <h2 style="font-family:'Marmelad',sans-serif;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--blue-deep);margin-bottom:12px;">Ready to Get Started?</h2>
-    <p style="color:var(--gray);font-size:1.05rem;max-width:500px;margin:0 auto 28px;">Schedule your free consultation today. No obligation, no pressure — just honest advice.</p>
+    <span class="section-label">Get Started</span>
+    <h2 style="font-family:var(--font-heading);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--color-primary);margin-bottom:12px;font-weight:800;">Ready to Protect What Matters?</h2>
+    <p style="color:var(--color-text-secondary);font-size:1rem;max-width:500px;margin:0 auto 28px;">Schedule your free consultation today. No obligation, no pressure — just honest advice.</p>
     <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-      <a href="tel:+14423246249" class="btn btn-blue">Call (442) 324-6249</a>
-      <a href="/contact.html" class="btn" style="background:var(--light);color:var(--blue-deep);border:1px solid var(--gray-light);">Contact Form</a>
+      <a href="tel:+14423246249" class="btn btn-accent">Call (442) 324-6249</a>
+      <a href="/contact.html" class="btn" style="background:var(--color-surface);color:var(--color-primary);border:1.5px solid var(--color-divider);">Contact Form</a>
     </div>
   </div>
 </section>
@@ -176,8 +206,9 @@
 <footer class="footer">
   <div class="footer-inner">
     <div>
-      <div class="footer-brand">C&A <span>Team</span></div>
-      <p>Cesar & Associates Health Plan Advisors. Helping families protect their health and legacy in the Coachella Valley.</p>
+      <div class="footer-brand">Cesar & Associates</div>
+      <p>Health Plan Advisors. Helping families protect their health and legacy in the Coachella Valley.</p>
+      <p style="margin-top:12px;font-size:0.8rem;">81953 Highway 111, Suite 4<br>Indio, CA 92201</p>
     </div>
     <div>
       <ul class="footer-links">
