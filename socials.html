@@ -1,0 +1,794 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Social Hub — Cesar & Associates</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0b1628;--bg2:#101f38;--sky:#4a8db7;--accent:#dc3545;--warm:#e8713a;--text:#f0f0f0;--muted:#8899aa;--font:'Inter',system-ui,sans-serif;--serif:'Playfair Display',Georgia,serif}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--accent);text-decoration:none;transition:all .3s ease}
+
+/* ── GRADIENT BG ─────────────────────── */
+body::before{content:'';position:fixed;inset:0;z-index:-2;background:linear-gradient(180deg,#4a8db7 0%,#2a6a94 15%,#163a5c 35%,#0b1628 60%)}
+
+/* ── ANIMATIONS ──────────────────────── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes pulse-glow{0%,100%{box-shadow:0 0 20px rgba(220,53,69,.1)}50%{box-shadow:0 0 40px rgba(220,53,69,.2)}}
+.reveal{opacity:0;transform:translateY(50px);transition:opacity 1s cubic-bezier(.22,1,.36,1),transform 1s cubic-bezier(.22,1,.36,1)}
+.reveal.vis{opacity:1;transform:none}
+.reveal-left{opacity:0;transform:translateX(-60px);transition:all 1s cubic-bezier(.22,1,.36,1)}
+.reveal-left.vis{opacity:1;transform:none}
+.reveal-right{opacity:0;transform:translateX(60px);transition:all 1s cubic-bezier(.22,1,.36,1)}
+.reveal-right.vis{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}.d6{transition-delay:.6s}
+
+/* ── NAV ─────────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 0;transition:all .5s}
+nav.scrolled{background:rgba(11,22,40,.92);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 1px 0 rgba(255,255,255,.04)}
+.nav-inner{max-width:1400px;margin:0 auto;padding:0 clamp(1.5rem,4vw,3rem);display:flex;justify-content:space-between;align-items:center}
+.nav-logo img{height:36px;width:auto}
+.nav-links{display:flex;gap:clamp(1rem,3vw,2.5rem);align-items:center}
+.nav-links a{color:rgba(240,240,240,.55);font-size:.82rem;font-weight:500;letter-spacing:.03em;transition:color .3s}
+.nav-links a:hover{color:var(--text)}
+.btn-nav{padding:.55rem 1.6rem;border-radius:100px;background:var(--accent);color:#fff!important;font-weight:600;font-size:.8rem;transition:all .4s cubic-bezier(.22,1,.36,1)}
+.btn-nav:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(220,53,69,.35)}
+.menu-btn{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+@media(max-width:768px){.menu-btn{display:block}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(11,22,40,.96);backdrop-filter:blur(20px);padding:2rem clamp(1.5rem,4vw,3rem);gap:1.5rem;border-bottom:1px solid rgba(255,255,255,.04)}.nav-links.open{display:flex}}
+
+/* ── LAYOUT ──────────────────────────── */
+.wrap{max-width:1400px;margin:0 auto;padding:0 clamp(1.5rem,4vw,3rem)}
+.wrap-narrow{max-width:860px;margin:0 auto;padding:0 clamp(1.5rem,4vw,3rem)}
+
+/* ── HERO ────────────────────────────── */
+.hero{min-height:50vh;display:flex;align-items:flex-end;padding:0 0 4rem;position:relative;overflow:hidden;background:url('assets/hero-bg.jpg') center top/cover no-repeat}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(74,141,183,.3) 0%,rgba(11,22,40,.6) 40%,rgba(11,22,40,.92) 85%,#0b1628 100%);z-index:1}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(transparent,#0b1628);z-index:1}
+.hero .wrap{position:relative;z-index:2}
+.hero-tag{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;padding:.4rem 1rem;border:1px solid rgba(220,53,69,.3);border-radius:100px}
+.hero h1{font-family:var(--serif);font-size:clamp(2.2rem,5vw,4rem);font-weight:700;line-height:1.05;letter-spacing:-.03em;margin-bottom:clamp(1rem,3vw,1.8rem)}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero-sub{font-size:clamp(1rem,1.8vw,1.2rem);color:var(--muted);max-width:580px;line-height:1.8;margin-bottom:2.5rem}
+
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2.2rem;border-radius:100px;font-weight:600;font-size:.88rem;cursor:pointer;transition:all .4s cubic-bezier(.22,1,.36,1);border:none;font-family:var(--font);letter-spacing:.01em}
+.btn-p{background:var(--accent);color:#fff;box-shadow:0 4px 20px rgba(220,53,69,.25)}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(220,53,69,.35)}
+.btn-o{border:1.5px solid rgba(240,240,240,.2);color:var(--text);background:transparent}
+.btn-o:hover{background:rgba(255,255,255,.05);border-color:rgba(240,240,240,.4)}
+
+/* ── SECTIONS ────────────────────────── */
+.sec{padding:clamp(4rem,10vh,7rem) 0;position:relative}
+.sec-label{font-size:.65rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+.sec-title{font-family:var(--serif);font-size:clamp(1.8rem,4vw,3rem);font-weight:700;line-height:1.1;letter-spacing:-.03em;margin-bottom:clamp(1rem,3vw,1.5rem)}
+.sec-title em{color:var(--accent);font-style:italic}
+.sec-sub{color:var(--muted);font-size:clamp(.95rem,1.5vw,1.05rem);max-width:600px;line-height:1.85}
+.divider{width:48px;height:2px;background:var(--accent);margin-bottom:1.8rem;border-radius:2px}
+.hr{border:none;height:1px;background:linear-gradient(90deg,transparent,rgba(220,53,69,.12),transparent);margin:0}
+
+/* ── ORBS ────────────────────────────── */
+.orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px);z-index:0}
+.orb-1{width:clamp(300px,40vw,600px);height:clamp(300px,40vw,600px);background:rgba(220,53,69,.06);top:-10%;right:-5%;animation:float 12s ease-in-out infinite}
+.orb-2{width:clamp(200px,30vw,450px);height:clamp(200px,30vw,450px);background:rgba(74,141,183,.06);bottom:5%;left:-8%;animation:float 16s ease-in-out infinite reverse}
+
+/* ── SOCIAL GRID ─────────────────────── */
+.social-grid{display:grid;grid-template-columns:1fr;gap:2rem;margin-top:2rem}
+@media(min-width:768px){.social-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.social-grid{grid-template-columns:repeat(3,1fr)}}
+
+.social-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:20px;overflow:hidden;transition:all .4s cubic-bezier(.22,1,.36,1)}
+.social-card:hover{border-color:rgba(220,53,69,.15);background:rgba(255,255,255,.05);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+
+.social-card-header{display:flex;align-items:center;gap:.75rem;padding:1.2rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.04)}
+.social-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.social-icon.fb{background:rgba(24,119,242,.15);color:#1877f2}
+.social-icon.yelp{background:rgba(255,25,25,.12);color:#ff1a1a}
+.social-icon.ig{background:linear-gradient(135deg,rgba(131,58,180,.15),rgba(253,29,29,.15),rgba(252,176,69,.15));color:#e1306c}
+.social-icon.tiktok{background:rgba(0,0,0,.3);color:#25f4ee}
+.social-icon.google{background:rgba(66,133,244,.12);color:#4285f4}
+.social-icon.linkedin{background:rgba(10,102,194,.15);color:#0a66c2}
+.social-card-header h3{font-size:.95rem;font-weight:600}
+.social-card-header .badge{margin-left:auto;font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .7rem;border-radius:100px;flex-shrink:0}
+.badge-live{background:rgba(34,197,94,.12);color:#22c55e;border:1px solid rgba(34,197,94,.2)}
+.badge-coming{background:rgba(250,204,21,.1);color:#facc15;border:1px solid rgba(250,204,21,.15)}
+
+.social-card-body{padding:1.5rem;min-height:280px;display:flex;flex-direction:column}
+.social-card-body iframe{border:none;border-radius:12px;flex:1;min-height:250px}
+
+/* ── EMBED OVERRIDES ─────────────────── */
+.fb-embed-wrap{position:relative;overflow:hidden;border-radius:12px;background:rgba(255,255,255,.02)}
+.fb-embed-wrap iframe{width:100%;min-height:500px;border:none}
+
+.yelp-badge{display:flex;align-items:center;gap:1rem;padding:1.2rem;border:1px solid rgba(255,255,255,.06);border-radius:14px;background:rgba(255,255,255,.02);transition:all .3s}
+.yelp-badge:hover{border-color:rgba(255,25,25,.15);background:rgba(255,255,255,.04)}
+.yelp-stars{display:flex;gap:2px;margin:.3rem 0}
+.yelp-star{color:#ff1a1a;font-size:1rem}
+
+/* ── PLACEHOLDER CARDS ───────────────── */
+.placeholder-feed{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-bottom:1rem}
+.placeholder-img{aspect-ratio:1;border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,.04),rgba(255,255,255,.08));position:relative;overflow:hidden}
+.placeholder-img::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);background-size:200% 100%;animation:shimmer 2s ease infinite}
+.placeholder-img .icon-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:1.5rem;opacity:.15}
+
+.coming-soon-tag{display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;font-weight:600;color:rgba(250,204,21,.8);letter-spacing:.04em;margin-bottom:.8rem}
+.coming-soon-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:rgba(250,204,21,.6);animation:pulse-glow 2s ease infinite}
+.coming-soon-text{font-size:.88rem;color:var(--muted);line-height:1.7}
+
+.profile-preview{display:flex;align-items:center;gap:.75rem;padding:.8rem;border:1px solid rgba(255,255,255,.06);border-radius:12px;background:rgba(255,255,255,.02);margin-bottom:1rem}
+.profile-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--warm));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;color:#fff;flex-shrink:0}
+.profile-info{flex:1;min-width:0}
+.profile-info .name{font-weight:600;font-size:.85rem}
+.profile-info .handle{font-size:.75rem;color:var(--muted)}
+.profile-follow-btn{padding:.4rem 1rem;border-radius:8px;font-size:.72rem;font-weight:600;border:none;cursor:default}
+
+/* ── GOOGLE REVIEWS WIDGET ───────────── */
+.google-review-card{padding:1rem;border:1px solid rgba(255,255,255,.06);border-radius:12px;background:rgba(255,255,255,.02);margin-bottom:.8rem}
+.google-review-header{display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem}
+.google-review-avatar{width:32px;height:32px;border-radius:50%;background:rgba(66,133,244,.2);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:600;color:#4285f4}
+.google-review-name{font-size:.82rem;font-weight:500}
+.google-review-date{font-size:.7rem;color:var(--muted)}
+.google-stars{color:#fbbc04;font-size:.9rem;letter-spacing:1px;margin-bottom:.4rem}
+.google-review-text{font-size:.82rem;color:var(--muted);line-height:1.6}
+
+/* ── TOOLS SECTION ───────────────────── */
+.tools-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-top:2rem}
+@media(min-width:640px){.tools-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.tools-grid{grid-template-columns:repeat(3,1fr)}}
+.tool-card{padding:clamp(1.5rem,3vw,2rem);border:1px solid rgba(255,255,255,.05);border-radius:16px;background:rgba(255,255,255,.02);transition:all .4s}
+.tool-card:hover{background:rgba(220,53,69,.03);border-color:rgba(220,53,69,.1)}
+.tool-card h3{font-size:1rem;font-weight:600;margin-bottom:.4rem}
+.tool-card p{color:var(--muted);font-size:.85rem;line-height:1.7}
+.tool-card .tool-tag{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.05em;padding:.2rem .6rem;border-radius:6px;margin-top:.8rem}
+.tool-free{background:rgba(34,197,94,.1);color:#22c55e;border:1px solid rgba(34,197,94,.15)}
+.tool-paid{background:rgba(250,204,21,.08);color:#facc15;border:1px solid rgba(250,204,21,.12)}
+
+/* ── LINKEDIN EMBED ──────────────────── */
+.linkedin-profile{padding:1.2rem;border:1px solid rgba(255,255,255,.06);border-radius:14px;background:rgba(255,255,255,.02)}
+.linkedin-profile .profile-banner{height:60px;border-radius:10px 10px 0 0;background:linear-gradient(135deg,#0a66c2,#004182);margin:-1.2rem -1.2rem 0;position:relative}
+.linkedin-profile .profile-avatar-lg{width:56px;height:56px;border-radius:50%;background:#163a5c;border:3px solid var(--bg2);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;color:#0a66c2;position:relative;top:-28px;margin-left:1rem;margin-bottom:-20px}
+.linkedin-profile .profile-details{padding:0 .5rem .5rem}
+.linkedin-profile .profile-details h4{font-size:.95rem;font-weight:600;margin-bottom:.15rem}
+.linkedin-profile .profile-details p{font-size:.8rem;color:var(--muted);line-height:1.5}
+.linkedin-connect-btn{display:inline-flex;align-items:center;gap:.4rem;margin-top:.8rem;padding:.45rem 1.2rem;border-radius:100px;background:#0a66c2;color:#fff;font-size:.78rem;font-weight:600;border:none;cursor:pointer;transition:all .3s}
+.linkedin-connect-btn:hover{background:#004182}
+
+/* ── CTA ─────────────────────────────── */
+.cta-sec{padding:clamp(4rem,8vh,6rem) 0;text-align:center;position:relative;overflow:hidden;background:url('assets/cta-bg.jpg') center/cover no-repeat;background-attachment:fixed}
+.cta-sec::before{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(11,22,40,.92) 0%,rgba(11,22,40,.85) 50%,rgba(11,22,40,.92) 100%)}
+.cta-sec .wrap{position:relative;z-index:1}
+.cta-sec h2{font-family:var(--serif);font-size:clamp(1.8rem,4vw,3rem);font-weight:700;line-height:1.05;letter-spacing:-.03em;margin-bottom:1.2rem}
+.cta-sec h2 em{color:var(--accent);font-style:italic}
+.cta-sec p{color:var(--muted);font-size:clamp(.95rem,1.5vw,1.05rem);margin-bottom:2rem;max-width:520px;margin-left:auto;margin-right:auto}
+@media(max-width:768px){.cta-sec,.hero{background-attachment:scroll}}
+
+/* ── FOOTER ──────────────────────────── */
+footer{padding:3rem 0;border-top:1px solid rgba(255,255,255,.04);font-size:.82rem;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1.5rem}
+footer a{color:var(--muted);transition:color .3s}
+footer a:hover{color:var(--accent)}
+.foot-links{display:flex;gap:2rem}
+.foot-logo img{height:32px;width:auto;opacity:.6}
+
+/* ── GRAIN ───────────────────────────── */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.018;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ── NOTES SECTION ───────────────────── */
+.impl-notes{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:clamp(1.5rem,3vw,2.5rem);margin-top:2rem}
+.impl-notes h3{font-size:1rem;font-weight:600;margin-bottom:1rem;color:var(--accent)}
+.impl-notes table{width:100%;border-collapse:collapse;font-size:.82rem}
+.impl-notes th,.impl-notes td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid rgba(255,255,255,.04)}
+.impl-notes th{color:var(--muted);font-weight:500;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em}
+.impl-notes td{color:var(--text)}
+.impl-notes td code{background:rgba(220,53,69,.08);color:var(--accent);padding:.15rem .4rem;border-radius:4px;font-size:.78rem;font-family:'SF Mono',Monaco,monospace}
+
+</style></head><body>
+
+<!-- ════════════════════════════════════════
+     NAV
+     ════════════════════════════════════════ -->
+<nav><div class="nav-inner">
+  <a href="/" class="nav-logo"><img src="assets/nav-logo.png" alt="Cesar & Associates"></a>
+  <button class="menu-btn" aria-label="Menu">&#9776;</button>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/agents.html">Agent Resources</a>
+    <a href="/socials.html" style="color:var(--text)">Social Hub</a>
+    <a href="tel:+14423246249" class="btn-nav">Call Us</a>
+  </div>
+</div></nav>
+
+<!-- ════════════════════════════════════════
+     HERO
+     ════════════════════════════════════════ -->
+<section class="hero">
+  <div class="orb orb-1"></div>
+  <div class="wrap">
+    <span class="hero-tag reveal">Connect With Us</span>
+    <h1 class="reveal d1">Our <em>Social Hub</em></h1>
+    <p class="hero-sub reveal d2">Follow Cesar & Associates across all platforms. Reviews, community updates, health tips, and more — all in one place.</p>
+  </div>
+</section>
+
+<hr class="hr">
+
+<!-- ════════════════════════════════════════
+     SECTION: LIVE SOCIAL EMBEDS
+     ════════════════════════════════════════ -->
+<section class="sec" id="social-hub">
+<div class="wrap">
+  <div class="divider reveal"></div>
+  <p class="sec-label reveal">Social Media</p>
+  <h2 class="sec-title reveal d1">Find us <em>everywhere</em></h2>
+  <p class="sec-sub reveal d2">Trusted by our community across the Coachella Valley. See what our clients are saying and stay connected.</p>
+
+  <div class="social-grid">
+
+    <!-- ───────────────────────────────────
+         1. FACEBOOK (LIVE)
+         Official: Facebook Page Plugin
+         https://developers.facebook.com/docs/plugins/page-plugin/
+         Uses iframe from facebook.com/plugins/page.php
+         ─────────────────────────────────── -->
+    <div class="social-card reveal d1">
+      <div class="social-card-header">
+        <div class="social-icon fb">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </div>
+        <div>
+          <h3>Facebook</h3>
+          <div style="font-size:.72rem;color:var(--muted)">361 likes</div>
+        </div>
+        <span class="badge badge-live">Live</span>
+      </div>
+      <div class="social-card-body">
+        <!--
+          IMPLEMENTATION NOTES — Facebook Page Plugin:
+          - Official method: iframe from developers.facebook.com
+          - No API key needed for the Page Plugin
+          - Width/height can be adjusted; 340px width works for card layout
+          - The "tabs" param controls what shows: timeline, events, messages
+          - Requires the page to be publicly accessible
+          - Alternative: Social Plugins SDK (requires FB JS SDK init)
+        -->
+        <div class="fb-embed-wrap">
+          <iframe
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCesarandAssociateshpa&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+            width="100%" height="500"
+            style="border:none;overflow:hidden;border-radius:12px;background:rgba(255,255,255,.03)"
+            scrolling="no" frameborder="0"
+            allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+          </iframe>
+        </div>
+        <a href="https://facebook.com/CesarandAssociateshpa" target="_blank" rel="noopener" class="btn btn-o" style="margin-top:1rem;width:100%;justify-content:center;font-size:.82rem">Visit Facebook Page</a>
+      </div>
+    </div>
+
+    <!-- ───────────────────────────────────
+         2. YELP (LIVE)
+         Official: Yelp Badge / Review Badge
+         https://www.yelp.com/developers/yelp_badge
+         Also: Yelp Fusion API (requires API key, not static)
+         For static: use Yelp's official badge images + link
+         ─────────────────────────────────── -->
+    <div class="social-card reveal d2">
+      <div class="social-card-header">
+        <div class="social-icon yelp">
+          <svg width="16" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.16 12.594l-4.995 1.433c-.96.276-1.74-.8-1.176-1.63l2.768-4.076c.564-.83 1.868-.345 1.868.695v2.596c0 .4-.17.78-.465.982zm-8.836-1.834l-2.77-4.075c-.563-.83.216-1.906 1.177-1.63l4.995 1.434c.68.195.804.99.465 1.482l-2.224 3.274c-.565.83-2.08.345-1.643-.485zM7.56 14.28l-4.96-1.6c-.96-.31-.96-1.65 0-1.96l4.96-1.6c.96-.31 1.62.89.99 1.8L7.56 12.9l.99 1.18c.63.91-.03 2.11-.99 1.8zm3.458 7.36l-1.44-4.96c-.31-.96.89-1.62 1.8-.99l3.48 2.42c.68.475.475 1.56-.36 1.68l-2.5.84c-.4.135-.82.06-1.08-.19l.1.2zm-.458-18.28l1.44 4.96c.31.96-.89 1.62-1.8.99L6.72 6.89c-.68-.475-.475-1.56.36-1.68l2.5-.84c.4-.135.82-.055 1.08.19l-.1-.2z"/></svg>
+        </div>
+        <div>
+          <h3>Yelp</h3>
+          <div style="font-size:.72rem;color:var(--muted)">5.0 stars</div>
+        </div>
+        <span class="badge badge-live">Live</span>
+      </div>
+      <div class="social-card-body">
+        <!--
+          IMPLEMENTATION NOTES — Yelp:
+          - Official: Yelp Badge (deprecated but still works via image URLs)
+          - No official iframe embed. Yelp removed their embed widget.
+          - Best static approach: Link badge + manual review showcase
+          - Yelp badge URL format: https://www.yelp.com/biz/BUSINESS-ID + badge images
+          - Alternative: Yelp Fusion API v3 (requires API key, CORS issues on static)
+          - For truly static: screenshot or CSS-recreated review cards
+        -->
+        <div class="yelp-badge" style="margin-bottom:1rem">
+          <div style="flex-shrink:0">
+            <svg width="60" height="30" viewBox="0 0 130 30"><rect rx="4" width="130" height="30" fill="#ff1a1a"/><text x="65" y="20" text-anchor="middle" fill="#fff" font-family="Arial" font-size="13" font-weight="bold">5.0 on Yelp</text></svg>
+          </div>
+          <div>
+            <div class="yelp-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div style="font-size:.78rem;color:var(--muted)">Based on verified reviews</div>
+          </div>
+        </div>
+
+        <!-- Yelp Review Showcase (manual / static) -->
+        <div style="border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:1rem;background:rgba(255,255,255,.02);margin-bottom:.8rem">
+          <div class="yelp-stars" style="margin-bottom:.4rem">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p style="font-size:.82rem;color:var(--muted);line-height:1.6;font-style:italic">"Cesar is very knowledgeable and helpful. He took the time to explain all my options and made the process easy. Highly recommend!"</p>
+          <div style="font-size:.72rem;color:rgba(255,255,255,.3);margin-top:.5rem">&#8212; Verified Yelp Review</div>
+        </div>
+
+        <!-- Official Yelp Badge Link (static, no API needed) -->
+        <a href="https://www.yelp.com/biz/cesar-health-insurance-services-indio" target="_blank" rel="noopener" class="btn btn-o" style="width:100%;justify-content:center;font-size:.82rem">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#ff1a1a"><path d="M20.16 12.594l-4.995 1.433c-.96.276-1.74-.8-1.176-1.63l2.768-4.076c.564-.83 1.868-.345 1.868.695v2.596c0 .4-.17.78-.465.982z"/></svg>
+          Read All Reviews on Yelp
+        </a>
+      </div>
+    </div>
+
+    <!-- ───────────────────────────────────
+         3. GOOGLE REVIEWS (PLACEHOLDER / WIDGET)
+         Official: Google Places API (requires API key + backend)
+         No official static embed for reviews.
+         Options:
+           - Google Business Profile badge link
+           - Elfsight Google Reviews widget
+           - Manual review cards (static)
+         ─────────────────────────────────── -->
+    <div class="social-card reveal d3">
+      <div class="social-card-header">
+        <div class="social-icon google">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        </div>
+        <div>
+          <h3>Google Reviews</h3>
+          <div style="font-size:.72rem;color:var(--muted)">Google Business Profile</div>
+        </div>
+        <span class="badge badge-live">Live</span>
+      </div>
+      <div class="social-card-body">
+        <!--
+          IMPLEMENTATION NOTES — Google Reviews:
+          - NO official embeddable widget from Google
+          - Google Places API requires backend + API key (not static-friendly)
+          - Options for static sites:
+            1. Elfsight Google Reviews widget (free tier: 1 widget, 200 views/mo)
+            2. Trustindex.io widget (free tier available)
+            3. Manual: Copy reviews into static HTML cards
+            4. Google "Review us on Google" badge link
+          - The markup below is a static recreation; replace with Elfsight
+            script tag when ready:
+            <script src="https://static.elfsight.com/platform/platform.js" async></script>
+            <div class="elfsight-app-XXXXX" data-elfsight-app-lazy></div>
+        -->
+
+        <!-- Static Google Review Cards -->
+        <div class="google-review-card">
+          <div class="google-review-header">
+            <div class="google-review-avatar">M</div>
+            <div>
+              <div class="google-review-name">Maria R.</div>
+              <div class="google-review-date">2 months ago</div>
+            </div>
+          </div>
+          <div class="google-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="google-review-text">Cesar helped my family find the perfect Medicare plan. He explains everything in both English and Spanish which was so helpful for my parents.</p>
+        </div>
+        <div class="google-review-card">
+          <div class="google-review-header">
+            <div class="google-review-avatar">J</div>
+            <div>
+              <div class="google-review-name">Jose L.</div>
+              <div class="google-review-date">3 months ago</div>
+            </div>
+          </div>
+          <div class="google-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="google-review-text">Very professional and patient. He took the time to compare multiple plans and found the best option for my budget. Highly recommend!</p>
+        </div>
+
+        <!-- Google Review Us Link -->
+        <a href="https://search.google.com/local/writereview?placeid=PLACE_ID_HERE" target="_blank" rel="noopener" class="btn btn-o" style="width:100%;justify-content:center;font-size:.82rem;margin-top:.5rem">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#4285f4"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          Leave a Google Review
+        </a>
+        <p style="font-size:.68rem;color:var(--muted);margin-top:.6rem;opacity:.5">Replace PLACE_ID_HERE with your Google Place ID. Review content above is sample data — update with real reviews.</p>
+      </div>
+    </div>
+
+    <!-- ───────────────────────────────────
+         4. INSTAGRAM (PLACEHOLDER — @CandATeam)
+         Official: Instagram oEmbed API (requires token since 2020)
+         Also: Instagram Basic Display API (deprecated June 2024)
+         Now: Instagram Graph API via Meta Business Suite
+         For static no-backend: No official embed works without token
+         Alternative: Elfsight IG Feed widget, or CSS placeholder grid
+         ─────────────────────────────────── -->
+    <div class="social-card reveal d4">
+      <div class="social-card-header">
+        <div class="social-icon ig">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </div>
+        <div>
+          <h3>Instagram</h3>
+          <div style="font-size:.72rem;color:var(--muted)">@CandATeam</div>
+        </div>
+        <span class="badge badge-coming">Coming Soon</span>
+      </div>
+      <div class="social-card-body">
+        <!-- Profile Preview -->
+        <div class="profile-preview">
+          <div class="profile-avatar">C&A</div>
+          <div class="profile-info">
+            <div class="name">Cesar & Associates</div>
+            <div class="handle">@CandATeam</div>
+          </div>
+          <button class="profile-follow-btn" style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:#fff;opacity:.7">Follow</button>
+        </div>
+
+        <!-- Placeholder IG Grid -->
+        <div class="coming-soon-tag">Coming Soon</div>
+        <div class="placeholder-feed">
+          <div class="placeholder-img"><div class="icon-overlay">&#128249;</div></div>
+          <div class="placeholder-img"><div class="icon-overlay">&#127968;</div></div>
+          <div class="placeholder-img"><div class="icon-overlay">&#129309;</div></div>
+          <div class="placeholder-img"><div class="icon-overlay">&#128172;</div></div>
+          <div class="placeholder-img"><div class="icon-overlay">&#127774;</div></div>
+          <div class="placeholder-img"><div class="icon-overlay">&#9829;</div></div>
+          <div class="placeholder-img"><div class="icon-overlay">&#128170;</div></div>
+          <div class="placeholder-img"><div class="icon-overlay">&#127891;</div></div>
+          <div class="placeholder-img"><div class="icon-overlay">&#128075;</div></div>
+        </div>
+        <p class="coming-soon-text">We're launching our Instagram soon! Follow <strong>@CandATeam</strong> for health tips, community spotlights, and behind-the-scenes looks at our team.</p>
+
+        <!--
+          WHEN ACCOUNT IS LIVE, replace placeholder with one of:
+
+          Option A — Elfsight IG Feed (easiest, free tier):
+          <script src="https://static.elfsight.com/platform/platform.js" async></script>
+          <div class="elfsight-app-XXXXX" data-elfsight-app-lazy></div>
+
+          Option B — Instagram oEmbed (requires Facebook App token):
+          GET https://graph.facebook.com/v18.0/instagram_oembed
+              ?url=https://www.instagram.com/CandATeam/
+              &access_token=YOUR_TOKEN
+          Returns HTML to embed. Must be fetched server-side or via proxy.
+
+          Option C — Curator.io aggregator:
+          <div id="curator-feed-XXXXX">
+            <a href="https://curator.io" target="_blank" class="crt-logo">Powered by Curator.io</a>
+          </div>
+          <script type="text/javascript">
+            (function(){var i,e,d=document,...curator embed code...})();
+          </script>
+        -->
+      </div>
+    </div>
+
+    <!-- ───────────────────────────────────
+         5. TIKTOK (PLACEHOLDER)
+         Official: TikTok oEmbed API
+         GET https://www.tiktok.com/oembed?url=VIDEO_URL
+         Returns HTML embed code for individual videos
+         Also: TikTok Embed SDK for profiles (limited)
+         No official "profile feed" widget exists yet
+         ─────────────────────────────────── -->
+    <div class="social-card reveal d5">
+      <div class="social-card-header">
+        <div class="social-icon tiktok">
+          <svg width="16" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.54a8.27 8.27 0 0 0 4.85 1.56V6.69h-1.09z"/></svg>
+        </div>
+        <div>
+          <h3>TikTok</h3>
+          <div style="font-size:.72rem;color:var(--muted)">@CandATeam</div>
+        </div>
+        <span class="badge badge-coming">Coming Soon</span>
+      </div>
+      <div class="social-card-body">
+        <!-- Profile Preview -->
+        <div class="profile-preview">
+          <div class="profile-avatar" style="background:linear-gradient(135deg,#25f4ee,#fe2c55)">C&A</div>
+          <div class="profile-info">
+            <div class="name">Cesar & Associates</div>
+            <div class="handle">@CandATeam</div>
+          </div>
+          <button class="profile-follow-btn" style="background:#fe2c55;color:#fff;opacity:.7">Follow</button>
+        </div>
+
+        <div class="coming-soon-tag">Coming Soon</div>
+
+        <!-- Placeholder TikTok-style video cards -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-bottom:1rem">
+          <div style="aspect-ratio:9/16;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
+            <div style="position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.03),transparent);background-size:200% 100%;animation:shimmer 2.5s ease infinite"></div>
+            <span style="font-size:2rem;opacity:.1">&#9654;</span>
+          </div>
+          <div style="aspect-ratio:9/16;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
+            <div style="position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.03),transparent);background-size:200% 100%;animation:shimmer 2.5s ease infinite .3s"></div>
+            <span style="font-size:2rem;opacity:.1">&#9654;</span>
+          </div>
+          <div style="aspect-ratio:9/16;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
+            <div style="position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.03),transparent);background-size:200% 100%;animation:shimmer 2.5s ease infinite .6s"></div>
+            <span style="font-size:2rem;opacity:.1">&#9654;</span>
+          </div>
+        </div>
+
+        <p class="coming-soon-text">Short-form video content coming to TikTok! Expect Medicare tips, client testimonials, and community content in English &amp; Spanish.</p>
+
+        <!--
+          WHEN ACCOUNT IS LIVE, embed individual TikTok videos:
+
+          Option A — TikTok oEmbed (individual video):
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@CandATeam/video/VIDEO_ID"
+            data-video-id="VIDEO_ID" style="max-width:325px;min-width:325px;">
+            <section></section>
+          </blockquote>
+          <script async src="https://www.tiktok.com/embed.js"></script>
+
+          Option B — oEmbed API call:
+          GET https://www.tiktok.com/oembed?url=https://www.tiktok.com/@CandATeam/video/VIDEO_ID
+
+          No profile feed widget exists from TikTok.
+          Use Curator.io or Elfsight for aggregated TikTok feed display.
+        -->
+      </div>
+    </div>
+
+    <!-- ───────────────────────────────────
+         6. LINKEDIN (LIVE)
+         Official: No embeddable profile widget
+         LinkedIn deprecated their Profile Plugin in 2018
+         Options: Manual card + link, or Elfsight LinkedIn widget
+         ─────────────────────────────────── -->
+    <div class="social-card reveal d6">
+      <div class="social-card-header">
+        <div class="social-icon linkedin">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </div>
+        <div>
+          <h3>LinkedIn</h3>
+          <div style="font-size:.72rem;color:var(--muted)">Cesar Perez</div>
+        </div>
+        <span class="badge badge-live">Live</span>
+      </div>
+      <div class="social-card-body">
+        <!--
+          IMPLEMENTATION NOTES — LinkedIn:
+          - LinkedIn removed all embeddable profile plugins in 2018
+          - No official iframe/widget/oEmbed for profiles
+          - The "Share" and "Follow Company" buttons still exist but are minimal
+          - Best approach: Manual profile card linking to the profile
+          - Alternative: Elfsight LinkedIn Feed widget (paid only)
+        -->
+        <div class="linkedin-profile">
+          <div class="profile-banner"></div>
+          <div class="profile-avatar-lg">CP</div>
+          <div class="profile-details">
+            <h4>Cesar Perez</h4>
+            <p>Health Insurance Advisor | Medicare Specialist<br>Cesar & Associates | Indio, CA</p>
+            <p style="margin-top:.6rem;font-size:.75rem;color:rgba(255,255,255,.3)">500+ connections</p>
+            <a href="https://www.linkedin.com/in/cesar-perez-660b8b40" target="_blank" rel="noopener" class="linkedin-connect-btn">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /social-grid -->
+</div>
+</section>
+
+<hr class="hr">
+
+<!-- ════════════════════════════════════════
+     SECTION: ALL-IN-ONE WIDGET TOOLS
+     ════════════════════════════════════════ -->
+<section class="sec">
+<div class="wrap">
+  <div class="divider reveal"></div>
+  <p class="sec-label reveal">Aggregator Tools</p>
+  <h2 class="sec-title reveal d1">All-in-one <em>widget options</em></h2>
+  <p class="sec-sub reveal d2">Third-party tools that aggregate multiple social feeds into a single embeddable widget. Research findings below.</p>
+
+  <div class="tools-grid">
+
+    <div class="tool-card reveal d1">
+      <h3>Elfsight</h3>
+      <p>Most popular all-in-one. Individual widgets for Facebook, Instagram, Google Reviews, Yelp, TikTok, and LinkedIn. Each is a separate widget with its own embed code.</p>
+      <div style="margin-top:.8rem;font-size:.8rem;color:var(--muted)">
+        <strong style="color:var(--text)">Free tier:</strong> 1 widget, 200 views/month<br>
+        <strong style="color:var(--text)">Basic:</strong> $5/mo per widget (unlimited views)<br>
+        <strong style="color:var(--text)">Embed:</strong> <code style="background:rgba(220,53,69,.08);color:var(--accent);padding:.1rem .3rem;border-radius:3px;font-size:.75rem">&lt;script src="https://static.elfsight.com/platform/platform.js"&gt;&lt;/script&gt;</code><br>
+        + <code style="background:rgba(220,53,69,.08);color:var(--accent);padding:.1rem .3rem;border-radius:3px;font-size:.75rem">&lt;div class="elfsight-app-XXXXX"&gt;&lt;/div&gt;</code>
+      </div>
+      <span class="tool-tag tool-free">Free tier available</span>
+    </div>
+
+    <div class="tool-card reveal d2">
+      <h3>Curator.io</h3>
+      <p>Social media aggregator that pulls feeds from Instagram, Facebook, TikTok, Twitter/X, LinkedIn, YouTube, and more into a single unified feed wall.</p>
+      <div style="margin-top:.8rem;font-size:.8rem;color:var(--muted)">
+        <strong style="color:var(--text)">Free tier:</strong> 1 feed, 1 source, Curator branding<br>
+        <strong style="color:var(--text)">Pro:</strong> $25/mo (multiple sources, no branding)<br>
+        <strong style="color:var(--text)">Embed:</strong> JS snippet + <code style="background:rgba(220,53,69,.08);color:var(--accent);padding:.1rem .3rem;border-radius:3px;font-size:.75rem">&lt;div id="curator-feed-XXXXX"&gt;</code><br>
+        <strong style="color:var(--text)">Layouts:</strong> Grid, Carousel, Waterfall, List
+      </div>
+      <span class="tool-tag tool-free">Free tier available</span>
+    </div>
+
+    <div class="tool-card reveal d3">
+      <h3>Trustindex.io</h3>
+      <p>Specialized for review aggregation. Pulls Google, Yelp, Facebook reviews into beautiful badge/carousel widgets. Great for social proof.</p>
+      <div style="margin-top:.8rem;font-size:.8rem;color:var(--muted)">
+        <strong style="color:var(--text)">Free tier:</strong> 1 widget, basic styling<br>
+        <strong style="color:var(--text)">Premium:</strong> $10/mo (multiple sources)<br>
+        <strong style="color:var(--text)">Best for:</strong> Review aggregation specifically<br>
+        <strong style="color:var(--text)">Embed:</strong> Single script tag
+      </div>
+      <span class="tool-tag tool-free">Free tier available</span>
+    </div>
+
+    <div class="tool-card reveal d4">
+      <h3>Juicer.io</h3>
+      <p>Aggregates 15+ social networks into a single feed. Moderate/filter posts. Good for displaying a unified social wall on landing pages.</p>
+      <div style="margin-top:.8rem;font-size:.8rem;color:var(--muted)">
+        <strong style="color:var(--text)">Free tier:</strong> 2 sources, Juicer branding<br>
+        <strong style="color:var(--text)">Small:</strong> $19/mo (5 sources, no branding)<br>
+        <strong style="color:var(--text)">Embed:</strong> <code style="background:rgba(220,53,69,.08);color:var(--accent);padding:.1rem .3rem;border-radius:3px;font-size:.75rem">&lt;script src="https://assets.juicer.io/embed.js"&gt;</code>
+      </div>
+      <span class="tool-tag tool-paid">Free + Paid</span>
+    </div>
+
+    <div class="tool-card reveal d5">
+      <h3>EmbedSocial</h3>
+      <p>Pull Instagram, Facebook, Google, TikTok feeds. Also generates review widgets. Strong moderation and analytics dashboard.</p>
+      <div style="margin-top:.8rem;font-size:.8rem;color:var(--muted)">
+        <strong style="color:var(--text)">Free tier:</strong> Limited (1 source, branding)<br>
+        <strong style="color:var(--text)">PRO:</strong> $29/mo<br>
+        <strong style="color:var(--text)">Unique:</strong> Auto-generates review request links
+      </div>
+      <span class="tool-tag tool-paid">Mostly paid</span>
+    </div>
+
+    <div class="tool-card reveal d6">
+      <h3>SociableKIT</h3>
+      <p>Widget builder for Facebook feeds, Google Reviews, Yelp reviews, LinkedIn profiles. Each platform gets its own widget type.</p>
+      <div style="margin-top:.8rem;font-size:.8rem;color:var(--muted)">
+        <strong style="color:var(--text)">Free tier:</strong> 1 widget with branding<br>
+        <strong style="color:var(--text)">Basic:</strong> $9/mo<br>
+        <strong style="color:var(--text)">Notable:</strong> Has Yelp-specific widget (rare)
+      </div>
+      <span class="tool-tag tool-free">Free tier available</span>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<hr class="hr">
+
+<!-- ════════════════════════════════════════
+     SECTION: IMPLEMENTATION REFERENCE
+     ════════════════════════════════════════ -->
+<section class="sec">
+<div class="wrap">
+  <div class="divider reveal"></div>
+  <p class="sec-label reveal">Developer Reference</p>
+  <h2 class="sec-title reveal d1">Embed <em>methods</em> per platform</h2>
+
+  <div class="impl-notes reveal d2">
+    <h3>Platform Embed Reference Table</h3>
+    <div style="overflow-x:auto">
+    <table>
+      <thead>
+        <tr>
+          <th>Platform</th>
+          <th>Official Method</th>
+          <th>Static HTML?</th>
+          <th>Auth Required?</th>
+          <th>Best Free Option</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Facebook</strong></td>
+          <td>Page Plugin <code>iframe</code></td>
+          <td>Yes - direct iframe</td>
+          <td>No (public pages)</td>
+          <td>Facebook Page Plugin (free, unlimited)</td>
+        </tr>
+        <tr>
+          <td><strong>Yelp</strong></td>
+          <td>Badge image + link (official widget deprecated)</td>
+          <td>Yes - badge image or manual</td>
+          <td>No for badge; API key for Fusion API</td>
+          <td>Manual review cards + Yelp link</td>
+        </tr>
+        <tr>
+          <td><strong>Google Reviews</strong></td>
+          <td>Places API (JS library)</td>
+          <td>No - requires API key + CORS proxy</td>
+          <td>Yes (API key)</td>
+          <td>Elfsight or Trustindex free widget</td>
+        </tr>
+        <tr>
+          <td><strong>Instagram</strong></td>
+          <td>oEmbed via Graph API</td>
+          <td>No - requires access token</td>
+          <td>Yes (Facebook App + IG Business)</td>
+          <td>Elfsight IG Feed widget (free tier)</td>
+        </tr>
+        <tr>
+          <td><strong>TikTok</strong></td>
+          <td>oEmbed API (per-video only)</td>
+          <td>Partial - individual videos via <code>blockquote</code></td>
+          <td>No for oEmbed</td>
+          <td>TikTok embed.js for individual videos</td>
+        </tr>
+        <tr>
+          <td><strong>LinkedIn</strong></td>
+          <td>None (deprecated 2018)</td>
+          <td>No official embed</td>
+          <td>N/A</td>
+          <td>Manual profile card + link</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="impl-notes reveal d3" style="margin-top:1.5rem">
+    <h3>Recommended Setup for Cesar & Associates</h3>
+    <div style="font-size:.88rem;color:var(--muted);line-height:1.8">
+      <p><strong style="color:var(--text)">Phase 1 (Now):</strong> Use the Facebook Page Plugin iframe (already working above). Create manual Yelp/Google review cards with direct links. Deploy LinkedIn profile card. Keep IG and TikTok placeholders.</p>
+      <p style="margin-top:.8rem"><strong style="color:var(--text)">Phase 2 (When IG/TikTok launch):</strong> Sign up for Elfsight (free tier gets 1 widget). Use it for Instagram feed since IG has no free static embed. Embed individual TikTok videos using their free oEmbed/blockquote method.</p>
+      <p style="margin-top:.8rem"><strong style="color:var(--text)">Phase 3 (Scale):</strong> Consider Curator.io Pro ($25/mo) to aggregate all platforms into one unified social wall. Or use Elfsight Basic ($5/widget/mo) for individual high-quality widgets per platform.</p>
+      <p style="margin-top:.8rem"><strong style="color:var(--text)">Google Reviews:</strong> Get the Place ID from Google Business Profile settings. Then either use Elfsight's Google Reviews widget (free tier) or Trustindex.io for a review badge. The "Leave a Review" link format is: <code>https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID</code></p>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<hr class="hr">
+
+<!-- ════════════════════════════════════════
+     CTA
+     ════════════════════════════════════════ -->
+<section class="cta-sec">
+<div class="wrap">
+  <h2 class="reveal">Follow us. <em>Stay connected.</em></h2>
+  <p class="reveal d1">Join our community across social media for health tips, enrollment updates, and local Coachella Valley news.</p>
+  <div class="reveal d2" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+    <a href="https://facebook.com/CesarandAssociateshpa" target="_blank" rel="noopener" class="btn btn-p">Visit Facebook</a>
+    <a href="https://www.yelp.com/biz/cesar-health-insurance-services-indio" target="_blank" rel="noopener" class="btn btn-o">See Yelp Reviews</a>
+    <a href="/contact.html" class="btn btn-o">Contact Us</a>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════
+     FOOTER
+     ════════════════════════════════════════ -->
+<footer><div class="wrap">
+  <div class="foot-logo"><img src="assets/footer-logo.png" alt="Cesar & Associates"></div>
+  <div>&copy; 2026 Cesar &amp; Associates &middot; 442-324-6249</div>
+  <div class="foot-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+</div></footer>
+
+<!-- ════════════════════════════════════════
+     SCRIPTS
+     ════════════════════════════════════════ -->
+<script>
+// Intersection Observer for reveal animations
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');obs.unobserve(x.target)}})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(e=>obs.observe(e));
+
+// Nav scroll effect
+const nav=document.querySelector('nav');
+window.addEventListener('scroll',()=>nav&&nav.classList.toggle('scrolled',scrollY>60));
+
+// Mobile menu toggle
+document.querySelector('.menu-btn')?.addEventListener('click',()=>document.querySelector('.nav-links')?.classList.toggle('open'));
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+  const t=document.querySelector(a.getAttribute('href'));
+  if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});
+  document.querySelector('.nav-links')?.classList.remove('open')}
+}));
+</script>
+
+</body></html>
